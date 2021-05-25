@@ -2,19 +2,22 @@ import "./App.scss";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import WeatherData from "./WeatherData";
+import WeatherHourly from "./WeatherHourly";
 
-const URL = "https://api.openweathermap.org/data/2.5/weather";
+const URL_CURRENT = "https://api.openweathermap.org/data/2.5/weather";
+const URL_DAILY = "https://api.openweathermap.org/data/2.5/onecall";
 const API_KEY = "6e4fed69198e988a933dfe45e62b901e";
 
 function App() {
   const [weatherData, setWeatherData] = useState();
+  const [weatherDailyData, setWeatherDailyData] = useState();
   // const [query, setQuery] = useState("");
   const ref = useRef();
 
   const getWeather = (queries) => {
     // console.log('getting weather...')
     axios
-      .get(URL, {
+      .get(URL_CURRENT, {
         params: {
           q: queries,
           units: "metric",
@@ -22,18 +25,31 @@ function App() {
         },
       })
       .then((res) => {
-        console.log(res);
-        // console.log('res >>', res);
-        // const { data } = res;
-        // console.log('destructured data >>', data)
-        // console.log(res.data);
         setWeatherData(res.data);
+        getDailyWeather(res.data.coord.lat, res.data.coord.lon);
+      });
+  };
+
+  const getDailyWeather = (lat, lon) => {
+    axios
+      .get(URL_DAILY, {
+        params: {
+          lat: lat,
+          lon: lon,
+          // exclude: "hourly,daily",
+          units: "metric",
+          APPID: API_KEY,
+        },
+      })
+      .then((res) => {
+        console.log("getDailyWeather is read");
+        setWeatherDailyData(res.data);
       });
   };
 
   useEffect(() => {
     getWeather("Toronto");
-  }, [])
+  }, []);
   const search = (e) => {
     if (e.key === "Enter") getWeather(ref.current.value);
   };
@@ -59,7 +75,12 @@ function App() {
         {/* <button onClick={() => getWeather("Toronto")}>Toronto</button>
       <button onClick={() => getWeather("London")}>London</button> */}
       </div>
-      <div className="today-time-section">time section</div>
+      <div className="today-time-section">
+        {weatherDailyData && (
+          <WeatherHourly weatherDailyData={weatherDailyData} />
+        )}
+        time section
+      </div>
       <div className="weekdays-section">weekdays section</div>
       <div className="todays-details">todays details</div>
     </div>
