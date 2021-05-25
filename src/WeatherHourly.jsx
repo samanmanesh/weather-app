@@ -1,6 +1,7 @@
 import React from 'react'
 import dayjs from 'dayjs';
 
+
 export default function WeatherHourly({weatherDailyData}) {
 
     const hourly = weatherDailyData.hourly;
