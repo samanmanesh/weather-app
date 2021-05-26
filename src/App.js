@@ -79,7 +79,6 @@ function App() {
         {weatherDailyData && (
           <WeatherHourly weatherDailyData={weatherDailyData} />
         )}
-        time section
       </div>
       <div className="weekdays-section">weekdays section</div>
       <div className="todays-details">todays details</div>

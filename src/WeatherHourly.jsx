@@ -1,26 +1,33 @@
-import React from 'react'
-import dayjs from 'dayjs';
+import React from "react";
+import dayjs from "dayjs";
+import { v4 as uuidv4 } from "uuid";
 
+export default function WeatherHourly({ weatherDailyData }) {
+  const hourly = weatherDailyData.hourly;
 
-export default function WeatherHourly({weatherDailyData}) {
+  const getTime = (interval) => {
+    if (interval === 0) return "Now";
+    const now = dayjs().add(interval, "hour");
+    return now.format("h A");
+    const tomorrow = dayjs().add(interval, "day");
+    const nextWeek = dayjs().add(interval, "week");
+  };
+  console.log(weatherDailyData);
+  return (
+    <div className="weather-hourly">
+      {hourly.map((data, index) => {
+        return (
+          <div key={uuidv4()}>
+            <div className="display-time">{getTime(index)}</div>
 
-    const hourly = weatherDailyData.hourly;
-
-    const getTime = interval => {
-        if (interval === 0) return 'Now'
-        const now = dayjs().add(interval, 'hour');
-        return now.format('h A')
-    }
-    return (
-        <div style={{display: 'flex', width: '100vw', overflow: 'scroll'}}>
-            {
-                hourly.map((data, index) => <div>
-                    {data.feels_like}
-                    <br />
-                    <b>{getTime(index)}</b>
-                    <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}/>
-                    </div>)
-            }
-        </div>
-    )
+            <img
+              src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+              className="display-icon"
+            />
+            <div className="display-temp">{Math.round(data.feels_like)}°</div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }

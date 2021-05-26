@@ -56,15 +56,43 @@
 
 .today-time-section {
   background: rgb(119, 70, 11);
-  height: 15vh;
+    border-top: 1px solid;
+  min-height: 15vh;
+ .weather-hourly{
+    display: flex; 
+    width: 100vw;
+    overflow: scroll;
+
+    .display-time{
+        margin: 0rem 0 0 1rem;
+        padding-top: 1rem;
+        // margin-top: 1rem;
+        // margin-left: 1rem;
+    }
+
+    .display-icon{
+        width: 4rem;
+        height: 4rem;
+        padding: .3rem;
+        margin: .1rem .1rem .1rem 0rem ;
+       
+    }
+    .display-temp{
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+
+ }
+
 }
 
 .weekdays-section {
   background: blueviolet;
-  height: 30vh;
+  min-height: 30vh;
 }
 
 .todays-details {
   background: brown;
-  height: 35vh;
+  min-height: 35vh;
 }
