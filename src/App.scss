@@ -90,6 +90,35 @@
 .weekdays-section {
   background: blueviolet;
   min-height: 30vh;
+
+  .weather-daily{
+      display: flex;
+    flex-direction: column;
+
+    .display-days {
+        display: flex;
+        align-content: center; 
+        justify-content: space-between;   
+        margin-left:1rem;
+        font-size:1em;
+        .days-name{
+            margin-top: 3rem;
+        }
+
+        .display-temp-max{
+            margin-top: 3rem;
+        }
+
+        .display-temp-min{
+            margin-top: 3rem;
+            margin-right: 1rem;
+        }
+    }
+
+
+  }
+
+
 }
 
 .todays-details {

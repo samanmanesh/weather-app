@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import WeatherData from "./WeatherData";
 import WeatherHourly from "./WeatherHourly";
+import WeatherDays from "./WeatherDays";
 
 const URL_CURRENT = "https://api.openweathermap.org/data/2.5/weather";
 const URL_DAILY = "https://api.openweathermap.org/data/2.5/onecall";
@@ -80,7 +81,11 @@ function App() {
           <WeatherHourly weatherDailyData={weatherDailyData} />
         )}
       </div>
-      <div className="weekdays-section">weekdays section</div>
+      <div className="weekdays-section">
+      {weatherDailyData && (
+          <WeatherDays weatherDailyData={weatherDailyData} />
+        )}
+      </div>
       <div className="todays-details">todays details</div>
     </div>
   );

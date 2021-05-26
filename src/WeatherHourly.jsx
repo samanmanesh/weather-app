@@ -9,8 +9,8 @@ export default function WeatherHourly({ weatherDailyData }) {
     if (interval === 0) return "Now";
     const now = dayjs().add(interval, "hour");
     return now.format("h A");
-    const tomorrow = dayjs().add(interval, "day");
-    const nextWeek = dayjs().add(interval, "week");
+    // const tomorrow = dayjs().add(interval, "day");
+    // const nextWeek = dayjs().add(interval, "week");
   };
   console.log(weatherDailyData);
   return (
