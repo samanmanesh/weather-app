@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function WeatherDays({ weatherDailyData }) {
   const days = weatherDailyData.daily;
+  
   console.log(days);
 
   const getDay = (interval) => {

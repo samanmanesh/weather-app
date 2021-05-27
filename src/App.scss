@@ -2,6 +2,13 @@
   color: aliceblue;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    rgba(64, 48, 169, 0.912),
+    rgb(29, 39, 97),
+    rgb(98, 154, 171)
+  );
+  transition: all 1s ease;
 }
 
 .today-section {
@@ -10,37 +17,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  .city-name{
-      margin-top: 1rem;
-      font-size: 3em;
-      text-align: center;
+  .city-name {
+    margin-top: 1rem;
+    font-size: 3em;
+    text-align: center;
   }
-  
+
   .description {
     text-transform: capitalize;
     font-size: 1.1rem;
     text-align: center;
-    margin-bottom: .1rem;
+    margin-bottom: 0.1rem;
     // padding-left: .4rem;
   }
-  
-  .temp{
-      font-size: 5em;
-      font-weight: 1rem;
+
+  .temp {
+    font-size: 5em;
+    font-weight: 1rem;
     //   padding-left: 1rem;
-      text-align: center;
+    text-align: center;
   }
-  
-  .temp-high-low{
-      font-size: 1.1em;
-      margin: 0 1rem 0 1rem;
-      padding:0 1rem 0 1rem;
+
+  .temp-high-low {
+    font-size: 1.1em;
+    margin: 0 1rem 0 1rem;
+    padding: 0 1rem 0 1rem;
   }
 
   .search {
     all: unset;
     // color: white;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
     background: rgba(245, 245, 245, 0.426);
     // border-color: white;
     padding: 0.2rem;
@@ -50,78 +57,89 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-
-  
 }
 
 .today-time-section {
-  background: rgb(119, 70, 11);
-    border-top: 1px solid;
+  //   background: rgb(119, 70, 11);
+  border-top: 1px solid;
   min-height: 15vh;
- .weather-hourly{
-    display: flex; 
+  .weather-hourly {
+    display: flex;
     width: 100vw;
     overflow: scroll;
 
-    .display-time{
-        margin: 0rem 0 0 1rem;
-        padding-top: 1rem;
-        // margin-top: 1rem;
-        // margin-left: 1rem;
+    .display-time {
+      margin: 0rem 0 0 1rem;
+      padding-top: 1rem;
+      // margin-top: 1rem;
+      // margin-left: 1rem;
     }
 
-    .display-icon{
-        width: 4rem;
-        height: 4rem;
-        padding: .3rem;
-        margin: .1rem .1rem .1rem 0rem ;
-       
+    .display-icon {
+      width: 4rem;
+      height: 4rem;
+      padding: 0.3rem;
+      margin: 0.1rem 0.1rem 0.1rem 0rem;
     }
-    .display-temp{
-        margin-left: 1.5rem;
-        margin-bottom: 1rem;
+    .display-temp {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
     }
-
-
- }
-
+  }
 }
+.weekdays-todays-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-.weekdays-section {
-  background: blueviolet;
-  min-height: 30vh;
 
-  .weather-daily{
+  .weekdays-section {
+    background: blueviolet;
+    min-width: 35rem;
+    //   max-height: 30vh;
+    //   max-height: 30vh;
+
+    .weather-daily {
       display: flex;
-    flex-direction: column;
+      flex-direction: column;
 
-    .display-days {
+      .display-days {
+        min-height:3.8rem;
+        border-bottom: 1px solid white;
         display: flex;
-        align-content: center; 
-        justify-content: space-between;   
-        margin-left:1rem;
-        font-size:1em;
-        .days-name{
-            margin-top: 3rem;
+        align-content: center;
+        justify-content: space-between;
+        margin-left: 1rem;
+        font-size: 1em;
+        .days-name {
+          margin: .5rem 0 .5rem 0;
+          min-width: 5rem;
         }
 
-        .display-temp-max{
-            margin-top: 3rem;
+        .display-icon-days {
+          width: 2rem;
+          height: 2rem;
         }
 
-        .display-temp-min{
-            margin-top: 3rem;
-            margin-right: 1rem;
+        .display-temp-max {
+            margin: .5rem 0 .5rem 0;
+          min-width: 5rem;
         }
+
+        .display-temp-min {
+         margin: .5rem 1rem .5rem 0;
+        //   margin-top: 1rem;
+        //   margin-right: 1rem;
+          min-width: 5rem;
+        }
+      }
     }
-
-
   }
 
-
-}
-
-.todays-details {
-  background: brown;
-  min-height: 35vh;
+  .todays-details {
+    //   margin-top:18rem;
+      background: brown;
+      min-width: 35rem;
+      height: 54vh;
+  }
 }

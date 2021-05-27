@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import WeatherData from "./WeatherData";
 import WeatherHourly from "./WeatherHourly";
 import WeatherDays from "./WeatherDays";
+import WeatherToday from "./WeatherToday";
 
 const URL_CURRENT = "https://api.openweathermap.org/data/2.5/weather";
 const URL_DAILY = "https://api.openweathermap.org/data/2.5/onecall";
@@ -32,7 +33,7 @@ function App() {
   };
 
   const getDailyWeather = (lat, lon) => {
-    axios
+    axios 
       .get(URL_DAILY, {
         params: {
           lat: lat,
@@ -59,8 +60,12 @@ function App() {
   //   navigator.geolocation.getCurrentPosition(e => console.log('got', e))
   // }, [])
 
+  const getBackground = () => {
+    // return 'linear-gradient(to bottom, rgb(86, 78, 138), rgb(97, 53, 29), red)'
+  };
+
   return (
-    <div className="App">
+    <div className="App" style={{ background: getBackground() }}>
       <div className="today-section">
         {weatherData && <WeatherData weatherData={weatherData} />}
         <input
@@ -81,12 +86,17 @@ function App() {
           <WeatherHourly weatherDailyData={weatherDailyData} />
         )}
       </div>
-      <div className="weekdays-section">
-      {weatherDailyData && (
-          <WeatherDays weatherDailyData={weatherDailyData} />
-        )}
+      <div className="weekdays-todays-container">
+        <div className="weekdays-section">
+          {weatherDailyData && (
+            <WeatherDays weatherDailyData={weatherDailyData} />
+          )}
+        </div>
+        <div className="todays-details">
+          todays details
+          {weatherDailyData && <WeatherToday weatherDailyData={weatherDailyData}/>}
+          </div>
       </div>
-      <div className="todays-details">todays details</div>
     </div>
   );
 }
