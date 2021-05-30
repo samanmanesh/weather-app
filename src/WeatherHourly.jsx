@@ -3,7 +3,10 @@ import dayjs from "dayjs";
 import { v4 as uuidv4 } from "uuid";
 
 export default function WeatherHourly({ weatherDailyData }) {
+  
+  // console.log(weatherDailyData);
   const hourly = weatherDailyData.hourly;
+  console.log(weatherDailyData.hourly);
 
   const getTime = (interval) => {
     if (interval === 0) return "Now";
@@ -12,7 +15,9 @@ export default function WeatherHourly({ weatherDailyData }) {
     // const tomorrow = dayjs().add(interval, "day");
     // const nextWeek = dayjs().add(interval, "week");
   };
-  console.log(weatherDailyData);
+  // console.log(weatherDailyData);
+
+  if (!hourly) return null;
   return (
     <div className="weather-hourly">
       {hourly.map((data, index) => {

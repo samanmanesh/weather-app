@@ -1,145 +1,95 @@
+$background: linear-gradient (to bottom rgba(255, 255, 255, 0.261));
+$mobileBreakpoint: 768px;
+
 .App {
-  color: aliceblue;
+  // background-color: rgb(73, 126, 172);
+  // width: 100vw;
+  // height: 100vh;
+  background: orange;
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  min-height: 100vh;
+  min-width: 1300px;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-rows: 3.5rem 1fr 3rem;
+  gap: 0px 0px;
+  grid-template-areas:
+    "header header header header"
+    "main main main sidebar"
+    "footer footer footer footer";
+
+  @media (max-width: $mobileBreakpoint) {
+    min-width: 0;
+  }
+}
+
+header {
+  grid-area: header;
+  background: $background;
+
+  text-align: center;
+  .header-title {
+    font-size: 1.5em;
+  }
+}
+
+main {
+  grid-area: main;
+  background: green;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    to bottom,
-    rgba(64, 48, 169, 0.912),
-    rgb(29, 39, 97),
-    rgb(98, 154, 171)
-  );
-  transition: all 1s ease;
-}
+  justify-content: flex-end;
+  min-width: 1000px;
 
-.today-section {
-  // background: aqua;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .city-name {
-    margin-top: 1rem;
-    font-size: 3em;
-    text-align: center;
-  }
+  .display-container {
+    background: pink;
+    margin-bottom: 5rem;
+    margin-left: 4rem;
 
-  .description {
-    text-transform: capitalize;
-    font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: 0.1rem;
-    // padding-left: .4rem;
-  }
-
-  .temp {
-    font-size: 5em;
-    font-weight: 1rem;
-    //   padding-left: 1rem;
-    text-align: center;
-  }
-
-  .temp-high-low {
-    font-size: 1.1em;
-    margin: 0 1rem 0 1rem;
-    padding: 0 1rem 0 1rem;
-  }
-
-  .search {
-    all: unset;
-    // color: white;
-    border-radius: 0.4rem;
-    background: rgba(245, 245, 245, 0.426);
-    // border-color: white;
-    padding: 0.2rem;
-    width: 30%;
-    // box-shadow: 0.09rem 0.09rem 3rem rgba(163, 158, 158, 0.638),
-    //   -0.09rem -0.09rem 0.7rem #18191a;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-}
-
-.today-time-section {
-  //   background: rgb(119, 70, 11);
-  border-top: 1px solid;
-  min-height: 15vh;
-  .weather-hourly {
-    display: flex;
-    width: 100vw;
-    overflow: scroll;
-
-    .display-time {
-      margin: 0rem 0 0 1rem;
-      padding-top: 1rem;
-      // margin-top: 1rem;
-      // margin-left: 1rem;
-    }
-
-    .display-icon {
-      width: 4rem;
-      height: 4rem;
-      padding: 0.3rem;
-      margin: 0.1rem 0.1rem 0.1rem 0rem;
-    }
-    .display-temp {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-  }
-}
-.weekdays-todays-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-
-  .weekdays-section {
-    background: blueviolet;
-    min-width: 35rem;
-    //   max-height: 30vh;
-    //   max-height: 30vh;
-
-    .weather-daily {
+    .weather-data {
+      // background: yellow;
       display: flex;
-      flex-direction: column;
+      // flex-direction: column;
+      // min-width: 1000px;
+      // .temp{
+      //     font-size:5em
 
-      .display-days {
-        min-height:3.8rem;
-        border-bottom: 1px solid white;
-        display: flex;
-        align-content: center;
-        justify-content: space-between;
-        margin-left: 1rem;
-        font-size: 1em;
-        .days-name {
-          margin: .5rem 0 .5rem 0;
-          min-width: 5rem;
+      // }
+
+      .name-date-container {
+        background: blue;
+        padding: 1rem;
+        .city-name {
+          font-size: 3em;
         }
 
-        .display-icon-days {
-          width: 2rem;
-          height: 2rem;
-        }
-
-        .display-temp-max {
-            margin: .5rem 0 .5rem 0;
-          min-width: 5rem;
-        }
-
-        .display-temp-min {
-         margin: .5rem 1rem .5rem 0;
-        //   margin-top: 1rem;
-        //   margin-right: 1rem;
-          min-width: 5rem;
+        .date-time {
+          font-size: 0.6em;
+          background: green;
         }
       }
     }
   }
-
-  .todays-details {
-    //   margin-top:18rem;
-      background: brown;
-      min-width: 35rem;
-      height: 54vh;
+  @media (max-width: $mobileBreakpoint) {
+    justify-content: flex-start;
+    min-width: 0;
   }
+}
+
+aside {
+  grid-area: sidebar;
+  background: red;
+  min-width: 100px;
+  @media (max-width: $mobileBreakpoint) {
+    display: none;
+  }
+}
+
+footer {
+  grid-area: footer;
+  background: brown;
 }
