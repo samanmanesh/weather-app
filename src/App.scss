@@ -1,11 +1,13 @@
-$background: linear-gradient (to bottom rgba(255, 255, 255, 0.261));
+// $background: linear-gradient (to bottom rgb(135, 49, 49));
+$background: rgb(92, 16, 16);
+$fontColor: white;
 $mobileBreakpoint: 768px;
 
 .App {
   // background-color: rgb(73, 126, 172);
   // width: 100vw;
   // height: 100vh;
-  background: orange;
+//   background: orange;
   display: flex;
   justify-content: center;
 }
@@ -42,6 +44,7 @@ header {
 }
 
 main {
+    color: $fontColor;
   grid-area: main;
   background: green;
   display: flex;
@@ -49,59 +52,63 @@ main {
   justify-content: flex-end;
 
   .display-container {
-    background: pink;
+    // background: pink;
     margin-bottom: 5rem;
     margin-left: 4rem;
 
+    .data {
+        margin-left: 1rem;
+        min-width: 25ch;
+    }
     .weather-data {
       display: flex;
+      align-items: center;
 
       .temp {
-        width: 10.5rem;
-        font-size: 7em;
-        font-weight: 200;
+        font-size: 6em;
+        font-weight: 300;
       }
-      .name-date-container {
-        background: blue;
+      .name-icon-container {
+        // background: blue;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        // flex-direction: column;
+        // justify-content: center;
         
         .city-name {
-          background: gray;
           margin-top: 0.5rem;
           padding: 0;
           font-size: 3em;
         }
 
-        .date-time {
-          font-size: 0.7em;
-          margin-top: 0.1rem;
-          background: green;
-        }
-      }
-      .description-icon-container {
-        width: 8rem;
-        background: brown;
-        padding: 0 1em 0 1em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
         .icon {
-          background: green;
-          padding:0 0 .3rem 0;
-          max-width: 4rem;
-          max-height: 4rem;
-          min-height: 4rem;
+            // background: green;
+            padding:0 0 .3rem 0;
+            max-width: 3rem;
+            max-height: 3rem;
+            min-height: 3rem;
+          }
+  
+      }
+      .description-date-container {
+        // width: 8rem
+        justify-content: space-between;
+        // background: brown;
+        // padding: 0 1em 0 1em;
+        display: flex;
+        align-items: center;
 
-          // margin-bottom: 0;
-        //   margin-top: 0.3rem;    
-        }
+        
+        .date-time {
+            font-size: 0.8rem;
+            margin-top: 0.1rem;
+            font-weight: 500;
+            // background: green;
+          }
         .description {
-          background: yellow;
-          font-size: 0.8em;
-        //   margin-top: 1rem;
+        //   background: yellow;
+          font-size: 1em;
         }
       }
 
@@ -124,14 +131,21 @@ main {
 
 aside {
   grid-area: sidebar;
-  background: red;
+  background: rgb(53, 71, 27);
   min-width: 100px;
   @media (max-width: $mobileBreakpoint) {
     display: none;
   }
+  
+
+
+
 }
 
 footer {
   grid-area: footer;
   background: brown;
 }
+
+
+//todo Blur effect: backdrop-blur
