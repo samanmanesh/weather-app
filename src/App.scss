@@ -83,8 +83,8 @@ main {
         }
 
         .icon {
-            // background: green;
-            padding:0 0 .3rem 0;
+            // background: rgb(128, 62, 0);
+            padding:0 1rem .1rem 0;
             max-width: 3rem;
             max-height: 3rem;
             min-height: 3rem;
@@ -107,7 +107,9 @@ main {
             // background: green;
           }
         .description {
+            padding-left: 1rem;
         //   background: yellow;
+        //   color:black;
           font-size: 1em;
         }
       }
@@ -136,10 +138,37 @@ aside {
   @media (max-width: $mobileBreakpoint) {
     display: none;
   }
-  
 
+  display: flex;
+  flex-direction: column;
+  .search-box{
+    background: orange;
+     input {
+        all: unset;
+        color:$fontColor;
+        font-weight:300;
+        background:rgb(107, 51, 82);
+        padding: 2rem 0 .1rem .3rem;
+        width:80%;
+        overflow: hidden;
+     }
 
+     button{
 
+     }
+  }
+
+  .city-offer{
+      background: rgb(78, 78, 153);
+  }
+
+  .weather-details{
+      background: rgb(107, 51, 82);
+  }
+
+  .next-days{
+      background: rgb(169, 115, 34);
+  }
 }
 
 footer {

@@ -6,7 +6,6 @@ import WeatherHourly from "./WeatherHourly";
 import WeatherDays from "./WeatherDays";
 import WeatherToday from "./WeatherToday";
 
-
 const URL_CURRENT = "https://api.openweathermap.org/data/2.5/weather";
 const URL_DAILY = "https://api.openweathermap.org/data/2.5/onecall";
 const API_KEY = "6e4fed69198e988a933dfe45e62b901e";
@@ -56,12 +55,16 @@ function App() {
 
   const search = (e) => {
     if (e.key === "Enter") getWeather(ref.current.value);
+    // getWeather(ref.current.value)
   };
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((e) => console.log("got", e));
   }, []);
 
+  useEffect(() => {
+    ref.current.value = "";
+  }, [weatherData]);
   // const getBackground = () => {
   // return 'linear-gradient(to bottom, rgb(86, 78, 138), rgb(97, 53, 29), red)'
   // };
@@ -97,15 +100,20 @@ function App() {
               // onChange={e => setQuery(e.target.value)}
               onKeyPress={search}
             />
+            <button onClick={() => getWeather(ref.current.value)}></button>
           </section>
           <section className="city-offer">
-            Birmingham Manchester New York California
+            <ul>
+              <li>Birmingham</li>
+              <li>Manchester</li>
+              <li>New York</li>
+              <li>California</li>
+            </ul>
           </section>
-          <section className="Weather-details">
+          <section className="weather-details">
             Weather Details Cloudy 86% Humidity 62% Wind 8km/h
           </section>
           <section className="next-days">
-            
             Next Days
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
