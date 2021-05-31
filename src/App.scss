@@ -57,23 +57,54 @@ main {
       display: flex;
 
       .temp {
-          font-size: 6em;
-          font-weight:200;
+        width: 10.5rem;
+        font-size: 7em;
+        font-weight: 200;
       }
       .name-date-container {
         background: blue;
-        padding: 1.5rem 0 0 1rem;
-        // padding:0;
-        // margin-bottom: 0;        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
         .city-name {
-          font-size: 2.5em;
+          background: gray;
+          margin-top: 0.5rem;
+          padding: 0;
+          font-size: 3em;
         }
 
         .date-time {
-          font-size: 1em;
+          font-size: 0.7em;
+          margin-top: 0.1rem;
           background: green;
         }
       }
+      .description-icon-container {
+        width: 8rem;
+        background: brown;
+        padding: 0 1em 0 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .icon {
+          background: green;
+          padding:0 0 .3rem 0;
+          max-width: 4rem;
+          max-height: 4rem;
+          min-height: 4rem;
+
+          // margin-bottom: 0;
+        //   margin-top: 0.3rem;    
+        }
+        .description {
+          background: yellow;
+          font-size: 0.8em;
+        //   margin-top: 1rem;
+        }
+      }
+
       @media (max-width: $mobileBreakpoint) {
         flex-direction: column;
       }

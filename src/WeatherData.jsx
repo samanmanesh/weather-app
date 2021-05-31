@@ -23,8 +23,8 @@ export default function WeatherData({ weatherData }) {
         <div className="date-time">{convertTime(weatherData.dt)}</div>
       </div>
       <div className="description-icon-container">
-        <div>
-          <img src={`icons/${weatherData.weather[0].icon}.svg`} />
+        <div className="icon">
+          <img src={`icons/${weatherData.weather[0].icon}.svg`}  className="icon"/>
         </div>
         <div className="description">{weatherData.weather[0].description}</div>
       </div>
