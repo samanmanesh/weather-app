@@ -6,7 +6,6 @@ import WeatherHourly from "./WeatherHourly";
 import WeatherDays from "./WeatherDays";
 import WeatherToday from "./WeatherToday";
 
-import { ReactComponent as Icon } from "./media/weather-icon-set.svg";
 
 const URL_CURRENT = "https://api.openweathermap.org/data/2.5/weather";
 const URL_DAILY = "https://api.openweathermap.org/data/2.5/onecall";
@@ -79,7 +78,6 @@ function App() {
           <div className="display-container">
             {weatherData && <WeatherData weatherData={weatherData} />}
           </div>
-          <div>this is for test</div>
           {/* <div>
             show hourly data
           {weatherDailyData && (

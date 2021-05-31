@@ -13,7 +13,6 @@ $mobileBreakpoint: 768px;
 .grid-container {
   display: grid;
   min-height: 100vh;
-  min-width: 1300px;
   grid-template-columns: 1fr 1fr 1fr 2fr;
   grid-template-rows: 3.5rem 1fr 3rem;
   gap: 0px 0px;
@@ -23,7 +22,12 @@ $mobileBreakpoint: 768px;
     "footer footer footer footer";
 
   @media (max-width: $mobileBreakpoint) {
-    min-width: 0;
+    min-width: 100vw;
+
+    grid-template-areas:
+      "header header header header"
+      "main main main main"
+      "footer footer footer footer";
   }
 }
 
@@ -43,7 +47,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-width: 1000px;
 
   .display-container {
     background: pink;
@@ -51,32 +54,40 @@ main {
     margin-left: 4rem;
 
     .weather-data {
-      // background: yellow;
       display: flex;
-      // flex-direction: column;
-      // min-width: 1000px;
-      // .temp{
-      //     font-size:5em
 
-      // }
-
+      .temp {
+          font-size: 6em;
+          font-weight:200;
+      }
       .name-date-container {
         background: blue;
-        padding: 1rem;
+        padding: 1.5rem 0 0 1rem;
+        // padding:0;
+        // margin-bottom: 0;        
         .city-name {
-          font-size: 3em;
+          font-size: 2.5em;
         }
 
         .date-time {
-          font-size: 0.6em;
+          font-size: 1em;
           background: green;
         }
       }
+      @media (max-width: $mobileBreakpoint) {
+        flex-direction: column;
+      }
     }
+    @media (max-width: $mobileBreakpoint) {
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+  @media (min-width: 1200px) {
+    min-width: 1000px;
   }
   @media (max-width: $mobileBreakpoint) {
     justify-content: flex-start;
-    min-width: 0;
   }
 }
 

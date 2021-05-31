@@ -1,20 +1,17 @@
 import React from "react";
 import dayjs from "dayjs";
+
+
+
+
+
 export default function WeatherData({ weatherData }) {
   console.log(weatherData);
-  // const getTime = (interval) => {
-  // if (interval === 0) return "Now";
-  // const now = dayjs().add(interval, "hour");
-  // return now.format("h A");
-  //// const tomorrow = dayjs().add(interval, "day");
-  //// const nextWeek = dayjs().add(interval, "week");
-  //   };
-
+  
   function convertTime(data) {
     let dt = new Date(data * 1000);
-    // console.log(new Date(unixTime * 1000), offset);
-    const t = dayjs(dt).format("hh mm - dddd, DMMM 'YY ");
-
+    // console.log(new Date(unixTime * 1000), offset)
+    const t = dayjs(dt).format("hh:mm - dddd, DMMM 'YY ");
     return t;
   }
 
@@ -26,6 +23,9 @@ export default function WeatherData({ weatherData }) {
         <div className="date-time">{convertTime(weatherData.dt)}</div>
       </div>
       <div className="description-icon-container">
+        <div>
+          <img src={`icons/${weatherData.weather[0].icon}.svg`} />
+        </div>
         <div className="description">{weatherData.weather[0].description}</div>
       </div>
 
