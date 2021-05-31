@@ -38,7 +38,7 @@ function App() {
         params: {
           lat: lat,
           lon: lon,
-          exclude: "hourly,daily",
+          exclude: "",
           units: "metric",
           APPID: API_KEY,
         },
@@ -69,8 +69,28 @@ function App() {
   // return 'linear-gradient(to bottom, rgb(86, 78, 138), rgb(97, 53, 29), red)'
   // };
   //
+  const displayBackground = () => {
+    
+    console.log("displayBack is read");
+        const image = weatherData.weather[0].icon;
+
+        return <img src="image" alt="" />
+        `background/${weatherData.weather[0].icon}.svg`;
+    
+  };
+
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{  
+        backgroundImage: "url(" + "/background/04d.jpg" + ")",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+        {/* {weatherData &&  src={ displayBackground()}  */}
+      {/* <img src={`background/10d.jpg`} /> */}
       <div className="grid-container">
         <header>
           {" "}
@@ -100,25 +120,28 @@ function App() {
               // onChange={e => setQuery(e.target.value)}
               onKeyPress={search}
             />
-            <button onClick={() => getWeather(ref.current.value)}></button>
+            <button onClick={() => getWeather(ref.current.value)}>
+              <img src="/icons/search.svg" alt="no" />
+            </button>
           </section>
           <section className="city-offer">
             <ul>
-              <li>Birmingham</li>
-              <li>Manchester</li>
-              <li>New York</li>
-              <li>California</li>
+              <li onClick={() => getWeather("Birmingham")}>Birmingham</li>
+              <li onClick={() => getWeather("Manchester")}>Manchester</li>
+              <li onClick={() => getWeather("New York")}>New York</li>
+              <li onClick={() => getWeather("California")}>California</li>
             </ul>
           </section>
           <section className="weather-details">
-            Weather Details Cloudy 86% Humidity 62% Wind 8km/h
+            {weatherDailyData && (
+              <WeatherToday weatherDailyData={weatherDailyData} />
+            )}
           </section>
           <section className="next-days">
-            Next Days
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-              veniam dolorum
-            </p>
+            <h3> Next Days</h3>
+            {weatherDailyData && (
+              <WeatherDays weatherDailyData={weatherDailyData} />
+            )}
           </section>
         </aside>
 

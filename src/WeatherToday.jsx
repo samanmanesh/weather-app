@@ -30,23 +30,50 @@ export default function WeatherToday({ weatherDailyData }) {
   }
 
   return (
-    <div>
+    <div className="weather-details">
+      <h3>Weather Details</h3>
       <div>
-        <span> SUNRISE {convertTime(todaySunrise)} </span>
-        <span> SUNSET {convertTime(todaySunset)} </span>
+        <span>Sunrise</span> <span> {convertTime(todaySunrise)} </span>{" "}
+      </div>
+      <div>
+        {" "}
+        <span>Sunset</span> <span>{convertTime(todaySunset)}</span>{" "}
+      </div>
+      <div>
+        <span>Chance of Rain</span> <span>08:3{weatherDailyData.current.rain ? weatherDailyData.current.rain : "0%"}</span>
+      </div>
+      <div>
+        <span>Humidity</span>
+        <span>{weatherDailyData.current.humidity}%</span>
+      </div>
+      <div>
+        <span>Wind</span>
+        <span>{weatherDailyData.current.wind_speed}</span>
+      </div>
+      <div>
+        <span>Feels Like</span>
+        <span>{weatherDailyData.current.feels_like}°</span>
+      </div>
+      <div>
+        <span>UV INDEX</span> <span>{Math.round(weatherDailyData.current.uvi)}</span>
       </div>
 
-      <div>
+      {/* <div>
+        <span> SUNRISE {convertTime(todaySunrise)} </span>
+        <span> SUNSET {convertTime(todaySunset)} </span>
+      </div> */}
+
+      {/* <div>
         CHANCE OF RAIN
         {weatherDailyData.current.rain ? weatherDailyData.current.rain : "0%"}
-      </div>
-      <div>HUMIDITY {weatherDailyData.current.humidity}%</div>
-      <div>WIND {weatherDailyData.current.wind_speed}</div>
-      <div>FEELS LIKE {weatherDailyData.current.feels_like}°</div>
+      </div> */}
+      {/* <div>HUMIDITY {weatherDailyData.current.humidity}%</div> */}
+      {/* <div>WIND {weatherDailyData.current.wind_speed}</div> */}
+      {/* <div>FEELS LIKE {weatherDailyData.current.feels_like}°</div> */}
       {/* <div>precipitation</div> */}
-      <div>PRESSURE {weatherDailyData.current.pressure} hPa</div>
-      <div>VISIBILITY {weatherDailyData.current.visibility / 1000} km</div>
-      <div>UV INDEX {Math.round(weatherDailyData.current.uvi)}</div>
+      {/* <div>PRESSURE {weatherDailyData.current.pressure} hPa</div> */}
+      {/* <div>VISIBILITY {weatherDailyData.current.visibility / 1000} km</div> */}
+      {/* <div>UV INDEX {Math.round(weatherDailyData.current.uvi)}</div> */}
     </div>
   );
 }
