@@ -79,14 +79,13 @@ function App() {
     
   };
 
+
+
   return (
     <div
       className="App"
       style={{  
-        backgroundImage: "url(" + "/background/04d.jpg" + ")",
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
+        backgroundImage: `url(background/${weatherData?.weather[0].icon}.jpg)`,
       }}
     >
         {/* {weatherData &&  src={ displayBackground()}  */}

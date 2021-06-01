@@ -1,29 +1,29 @@
 // $background: linear-gradient (to bottom rgb(135, 49, 49));
 $background: rgb(92, 16, 16);
-$material: rgba(45, 43, 43, 0.22);
-$fontColor:  white;
+$material: rgba(0, 0, 0, 0.5);
+$fontColor: white;
 $mobileBreakpoint: 768px;
 
 .App {
-//   background-image: url("01d.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  //   background-image: url("01d.jpg");
 
-    // background-color: rgb(73, 126, 172);
+  // background-color: rgb(73, 126, 172);
   // width: 100vw;
   // height: 100vh;
   //   background: orange;
-//   background-image: url(/public/background/01d.gif);
+  //   background-image: url(/public/background/01d.gif);
   display: flex;
   justify-content: center;
-  
 
-//   background: url(/public/background/01d.jpg.) no-repeat center center fixed; 
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
+  //   background: url(/public/background/01d.jpg.) no-repeat center center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
 }
-
-
 
 .grid-container {
   display: grid;
@@ -48,11 +48,11 @@ $mobileBreakpoint: 768px;
 
 header {
   grid-area: header;
-  border: solid 1px white;
+  //   border: solid 1px white;
   color: $fontColor;
   font-weight: 150;
 
-    background: $material;
+  background: $material;
 
   text-align: center;
   .header-title {
@@ -61,7 +61,7 @@ header {
 }
 
 main {
-    border: solid 1px white;
+  //   border: solid 1px white;
   color: $fontColor;
   grid-area: main;
   //   background: green;
@@ -148,12 +148,12 @@ main {
 }
 
 aside {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-      border: solid 1px white;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  //   border: solid 1px white;
   color: $fontColor;
   grid-area: sidebar;
-    // background: $material;
+  background: $material;
   min-width: 100px;
   @media (max-width: $mobileBreakpoint) {
     display: none;
@@ -162,13 +162,13 @@ aside {
   display: flex;
   flex-direction: column;
   .search-box {
-    border: solid 1px white;
+    // border: solid 1px white;
     display: flex;
     // background: orange;
     max-height: 10vh;
     input {
-    -webkit-backdrop-filter: blur(30px);
-    backdrop-filter:blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
       all: unset;
       color: rgb(255, 255, 255);
       font-weight: 300;
@@ -194,13 +194,13 @@ aside {
   }
 
   .city-offer {
-    border: solid 1px white;
+    // border: solid 1px white;
     // background: rgb(78, 78, 153);
     ul {
     }
     li {
       list-style: none;
-      padding: .5rem 0 .5rem 0;
+      padding: 0.5rem 0 0.5rem 0;
       cursor: pointer;
     }
     li:nth-child(4) {
@@ -212,7 +212,7 @@ aside {
   .weather-details {
     // border: solid 1px white;
     // background: rgb(107, 51, 82);
-    padding: 0 2.5rem .2rem 2.5rem;
+    padding: 0 2.5rem 0.2rem 2.5rem;
     display: flex;
     flex-direction: column;
     h3 {
@@ -227,20 +227,20 @@ aside {
   }
 
   .next-days {
-    border: solid 1px white;
+    // border: solid 1px white;
     // background: rgb(169, 115, 34);
     padding: 0 2.5rem 1rem 2.5rem;
     max-height: 30vh;
-    overflow: scroll;
-    
+    overflow: auto;
+
     .display-days {
-        // overflow: scroll;
-        max-height: 10vh;
-        // overflow: scroll;
+      // overflow: scroll;
+      max-height: 10vh;
+      // overflow: scroll;
       // background: pink;
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid white;
+      //   border-bottom: 1px solid white;
       padding: 0.3rem 0.2rem 0.2rem 0;
       align-items: center;
 
@@ -261,10 +261,37 @@ aside {
 footer {
   grid-area: footer;
   color: $fontColor;
-    background:$material;
-  border: solid 1px white;
+  background: $material;
+  //   border: solid 1px white;
   text-align: start;
-  padding:1rem 0 0 .4rem;
+  padding: 1rem 0 0 0.4rem;
 }
 
 //todo Blur effect: backdrop-blur
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #00000055;
+  width: 0.5rem;
+  :hover {
+      width: 1rem;
+  }
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+  border-radius: 0.25rem;
+  :hover {
+    width: 1rem;
+}
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
