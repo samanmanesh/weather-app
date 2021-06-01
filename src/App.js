@@ -139,18 +139,30 @@ function App() {
             )}
           </section>
         </aside>
-
-        <footer>
-          
-          <span>Connect with us </span> 
-          
-          <a href="https://github.com/samanmanesh" target="_blank"> <img src="/social-icons/github.svg" alt="" /></a>
-          <a href="https://instagram.com/samansmanesh" target="_blank" ><img src="/social-icons/instagram.svg" alt="" /></a>
-          <a href="https://www.linkedin.com/in/saman-manesh-96b257213/" target="_blank" ><img src="/social-icons/linkedin.svg" alt="" /></a>
-          <a href=""><img src="/social-icons/mail.svg" alt="" /></a>
-          <div>Created by Saman Manesh</div> 
-        </footer>
       </div>
+
+      <footer>
+        <div> <div>Connect with us </div> 
+
+        <a href="https://github.com/samanmanesh" target="_blank">
+          {" "}
+          <img src="/social-icons/github.svg" alt="" />
+        </a>
+        <a href="https://instagram.com/samansmanesh" target="_blank">
+          <img src="/social-icons/instagram.svg" alt="" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/saman-manesh-96b257213/"
+          target="_blank"
+        >
+          <img src="/social-icons/linkedin.svg" alt="" />
+        </a>
+        <a href="">
+          <img src="/social-icons/mail.svg" alt="" />
+        </a>
+        </div>
+        <div className="creator-name">Created by Saman Manesh </div>
+      </footer>
     </div>
   );
 }

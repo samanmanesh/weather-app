@@ -30,18 +30,18 @@ $mobileBreakpoint: 768px;
   display: grid;
   min-height: 100vh;
   grid-template-columns: 25% 25% 25% 1.5fr;
-  grid-template-rows: 1fr 4rem;
+  grid-template-rows: 1fr 1rem;
   gap: 0px 0px;
   grid-template-areas:
     "main main main sidebar"
-    "footer footer footer footer";
+    "main main main sidebar";
 
   @media (max-width: $mobileBreakpoint) {
     min-width: 100vw;
 
     grid-template-areas:
       "main main main main"
-      "footer footer footer footer";
+      ;
   }
 }
 
@@ -153,6 +153,7 @@ aside {
   grid-area: sidebar;
   background: $material;
   min-width: 100px;
+  
   @media (max-width: $mobileBreakpoint) {
     display: none;
   }
@@ -234,7 +235,7 @@ aside {
     // border: solid 1px white;
     // background: rgb(169, 115, 34);
     padding: 0 2.5rem 1rem 2.5rem;
-    max-height: 30vh;
+    max-height: 40vh;
     overflow: auto;
     h3{
         border-top: solid 1px white;
@@ -245,7 +246,7 @@ aside {
     .display-days {
         
       // overflow: scroll;
-      max-height: 10vh;
+      max-height: 30vh;
       // overflow: scroll;
       // background: pink;
       display: flex;
@@ -269,12 +270,31 @@ aside {
 }
 
 footer {
-  grid-area: footer;
+//   grid-area: footer;
+    width: 99%;
+    margin-top: 0;
   color: $fontColor;
   background: $material;
+  display: flex;
   //   border: solid 1px white;
-  text-align: start;
-  padding: 1rem 0 0 0.4rem;
+//   text-align: start;
+  justify-content:space-between;
+//   align-items: center;
+  padding: 1rem 0 1rem 1rem;
+
+  div{
+      display:flex;
+      padding: .2rem 1rem 0 1rem;
+  }
+  
+  a{
+      padding-right:1rem;
+  }
+
+  .creator-name{
+      padding-right: 2rem;
+  }
+
 }
 
 //todo Blur effect: backdrop-blur
