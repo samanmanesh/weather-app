@@ -24,7 +24,7 @@ export default function WeatherToday({ weatherDailyData }) {
   function convertTime(data) {
     let dt = new Date(data * 1000);
     // console.log(new Date(unixTime * 1000), offset);
-    const t = dayjs(dt).format("h m A");
+    const t = dayjs(dt).format("h:m A");
 
     return t;
   }

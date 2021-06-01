@@ -161,26 +161,24 @@ aside {
   flex-direction: column;
   .search-box {
     // border: solid 1px white;
+    padding: 0 0 0.5rem 2.5rem;
     display: flex;
+    justify-content: space-between;
     // background: orange;
     max-height: 10vh;
     input {
-      -webkit-backdrop-filter: blur(100px);
-      backdrop-filter: blur(100px);
       all: unset;
+      border-bottom: solid .1rem white;
       color: rgb(255, 255, 255);
       font-weight: 300;
-      //   background: rgb(107, 51, 82);
-      padding: 2rem 0 0.5rem 2.5rem;
-      width: 95%;
-
-      // overflow: hidden;
+      padding: 2rem 0 .5rem 0;
+      width: 65%;
     }
 
     button {
       all: unset;
       background: rgba(214, 214, 214, 0.467);
-    -webkit-backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       width: 4rem;
       cursor: pointer;
@@ -194,9 +192,11 @@ aside {
   }
 
   .city-offer {
+      
     // border: solid 1px white;
     // background: rgb(78, 78, 153);
     ul {
+        
     }
     li {
       list-style: none;
@@ -210,16 +210,18 @@ aside {
   }
 
   .weather-details {
-    // border: solid 1px white;
     // background: rgb(107, 51, 82);
     padding: 0 2.5rem 0.2rem 2.5rem;
     display: flex;
     flex-direction: column;
     h3 {
-      // padding-left: .6rem;
+      padding-top: .6rem;
+      border-top: solid 1px white;
+
     }
 
     div {
+        
       padding: 0 0 0.7rem 0;
       display: flex;
       justify-content: space-between;
@@ -227,13 +229,21 @@ aside {
   }
 
   .next-days {
+    // border-top: solid 1px white;
+
     // border: solid 1px white;
     // background: rgb(169, 115, 34);
     padding: 0 2.5rem 1rem 2.5rem;
     max-height: 30vh;
     overflow: auto;
+    h3{
+        border-top: solid 1px white;
+        padding-top: .6rem;
+
+    }
 
     .display-days {
+        
       // overflow: scroll;
       max-height: 10vh;
       // overflow: scroll;

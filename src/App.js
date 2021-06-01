@@ -142,10 +142,11 @@ function App() {
 
         <footer>
           Connect with us 
-          <a href="">GitHub</a>
+          <a href="">GitHub </a>
           <a href="">Instagram</a>
           <a href="">email</a>
           <a href="">Linkedin</a>
+          Created by Saman Manesh
         </footer>
       </div>
     </div>
