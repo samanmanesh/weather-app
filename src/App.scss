@@ -16,7 +16,8 @@ $mobileBreakpoint: 768px;
   //   background: orange;
   //   background-image: url(/public/background/01d.gif);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
   //   background: url(/public/background/01d.jpg.) no-repeat center center fixed;
   //   -webkit-background-size: cover;
@@ -29,10 +30,9 @@ $mobileBreakpoint: 768px;
   display: grid;
   min-height: 100vh;
   grid-template-columns: 25% 25% 25% 1.5fr;
-  grid-template-rows: 3.5rem 1fr 3rem;
+  grid-template-rows: 1fr 3rem;
   gap: 0px 0px;
   grid-template-areas:
-    "header header header header"
     "main main main sidebar"
     "footer footer footer footer";
 
@@ -40,18 +40,16 @@ $mobileBreakpoint: 768px;
     min-width: 100vw;
 
     grid-template-areas:
-      "header header header header"
       "main main main main"
       "footer footer footer footer";
   }
 }
 
 header {
-  grid-area: header;
-  //   border: solid 1px white;
+  height: 3.5rem;
+  width: 100%;
   color: $fontColor;
   font-weight: 150;
-
   background: $material;
 
   text-align: center;
@@ -96,7 +94,7 @@ main {
 
         .city-name {
           margin-top: 0.5rem;
-          padding: 0;
+          padding-right: 1rem;
           font-size: 3em;
         }
 
@@ -167,8 +165,8 @@ aside {
     // background: orange;
     max-height: 10vh;
     input {
-      -webkit-backdrop-filter: blur(30px);
-      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(100px);
+      backdrop-filter: blur(100px);
       all: unset;
       color: rgb(255, 255, 255);
       font-weight: 300;
@@ -181,7 +179,9 @@ aside {
 
     button {
       all: unset;
-      background: rgba(255, 255, 255, 0.268);
+      background: rgba(214, 214, 214, 0.467);
+    -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
       width: 4rem;
       cursor: pointer;
 
@@ -278,7 +278,7 @@ footer {
   background: #00000055;
   width: 0.5rem;
   :hover {
-      width: 1rem;
+    width: 1rem;
   }
 }
 
@@ -288,7 +288,7 @@ footer {
   border-radius: 0.25rem;
   :hover {
     width: 1rem;
-}
+  }
 }
 
 /* Handle on hover */

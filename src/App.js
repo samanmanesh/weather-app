@@ -70,32 +70,28 @@ function App() {
   // };
   //
   const displayBackground = () => {
-    
     console.log("displayBack is read");
-        const image = weatherData.weather[0].icon;
+    const image = weatherData.weather[0].icon;
 
-        return <img src="image" alt="" />
-        `background/${weatherData.weather[0].icon}.svg`;
-    
+    return (
+      <img src="image" alt="" />
+    )`background/${weatherData.weather[0].icon}.svg`;
   };
-
-
 
   return (
     <div
       className="App"
-      style={{  
+      style={{
         backgroundImage: `url(background/${weatherData?.weather[0].icon}.jpg)`,
       }}
     >
-        {/* {weatherData &&  src={ displayBackground()}  */}
+      {/* {weatherData &&  src={ displayBackground()}  */}
       {/* <img src={`background/10d.jpg`} /> */}
+      <header>
+        {" "}
+        <h1 className="header-title ">The Hava Weather</h1>
+      </header>
       <div className="grid-container">
-        <header>
-          {" "}
-          <h1 className="header-title ">The Hava Weather</h1>
-        </header>
-
         <main>
           <div className="display-container">
             {weatherData && <WeatherData weatherData={weatherData} />}
@@ -144,7 +140,13 @@ function App() {
           </section>
         </aside>
 
-        <footer>Connect with us</footer>
+        <footer>
+          Connect with us 
+          <a href="">GitHub</a>
+          <a href="">Instagram</a>
+          <a href="">email</a>
+          <a href="">Linkedin</a>
+        </footer>
       </div>
     </div>
   );
