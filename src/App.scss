@@ -30,7 +30,7 @@ $mobileBreakpoint: 768px;
   display: grid;
   min-height: 100vh;
   grid-template-columns: 25% 25% 25% 1.5fr;
-  grid-template-rows: 1fr 3rem;
+  grid-template-rows: 1fr 4rem;
   gap: 0px 0px;
   grid-template-areas:
     "main main main sidebar"

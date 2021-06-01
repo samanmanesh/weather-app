@@ -141,12 +141,14 @@ function App() {
         </aside>
 
         <footer>
-          Connect with us 
-          <a href="">GitHub </a>
-          <a href="">Instagram</a>
-          <a href="">email</a>
-          <a href="">Linkedin</a>
-          Created by Saman Manesh
+          
+          <span>Connect with us </span> 
+          
+          <a href="https://github.com/samanmanesh" target="_blank"> <img src="/social-icons/github.svg" alt="" /></a>
+          <a href="https://instagram.com/samansmanesh" target="_blank" ><img src="/social-icons/instagram.svg" alt="" /></a>
+          <a href="https://www.linkedin.com/in/saman-manesh-96b257213/" target="_blank" ><img src="/social-icons/linkedin.svg" alt="" /></a>
+          <a href=""><img src="/social-icons/mail.svg" alt="" /></a>
+          <div>Created by Saman Manesh</div> 
         </footer>
       </div>
     </div>
