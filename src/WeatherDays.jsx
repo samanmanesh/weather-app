@@ -20,7 +20,6 @@ export default function WeatherDays({ weatherDailyData }) {
               <div className="days-name">{getDay(index)}</div>
               <img
                 src={`icons/${data.weather[0].icon}.svg`}
-                // src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
                 className="display-icon-days"
               />
               <div>

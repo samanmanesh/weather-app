@@ -13,11 +13,9 @@ const API_KEY = "6e4fed69198e988a933dfe45e62b901e";
 function App() {
   const [weatherData, setWeatherData] = useState();
   const [weatherDailyData, setWeatherDailyData] = useState();
-  // const [query, setQuery] = useState("");
   const ref = useRef();
 
   const getWeather = (queries) => {
-    // console.log("getting weather...");
     axios
       .get(URL_CURRENT, {
         params: {
@@ -55,7 +53,6 @@ function App() {
 
   const search = (e) => {
     if (e.key === "Enter") getWeather(ref.current.value);
-    // getWeather(ref.current.value)
   };
 
   useEffect(() => {
@@ -65,10 +62,6 @@ function App() {
   useEffect(() => {
     ref.current.value = "";
   }, [weatherData]);
-  // const getBackground = () => {
-  // return 'linear-gradient(to bottom, rgb(86, 78, 138), rgb(97, 53, 29), red)'
-  // };
-  //
   const displayBackground = () => {
     console.log("displayBack is read");
     const image = weatherData.weather[0].icon;
@@ -85,10 +78,7 @@ function App() {
         backgroundImage: `url(background/${weatherData?.weather[0].icon}.jpg)`,
       }}
     >
-      {/* {weatherData &&  src={ displayBackground()}  */}
-      {/* <img src={`background/10d.jpg`} /> */}
       <header>
-        {" "}
         <h1 className="header-title ">The Hava Weather</h1>
       </header>
       <div className="grid-container">
@@ -96,12 +86,7 @@ function App() {
           <div className="display-container">
             {weatherData && <WeatherData weatherData={weatherData} />}
           </div>
-          {/* <div>
-            show hourly data
-          {weatherDailyData && (
-          <WeatherHourly weatherDailyData={weatherDailyData} />
-        )}
-        </div> */}
+         
         </main>
 
         <aside>
@@ -110,9 +95,7 @@ function App() {
               type="text"
               className="search"
               placeholder="Another location"
-              // value={query}
               ref={ref}
-              // onChange={e => setQuery(e.target.value)}
               onKeyPress={search}
             />
             <button onClick={() => getWeather(ref.current.value)}>
@@ -169,79 +152,3 @@ function App() {
 
 export default App;
 
-{
-  /* <div className="App" style={{ background: getBackground() }}></div> */
-}
-{
-  /* <div className="today-section"> */
-}
-{
-  /* {weatherData && <WeatherData weatherData={weatherData} />} */
-}
-
-{
-  /* <input */
-}
-// type="text"
-// className="search"
-// placeholder="Search..."
-// value={query}
-// ref={ref}
-// onChange={(e) => setQuery(e.target.value)}
-// onKeyPress={search}
-{
-  /* />; */
-}
-{
-  /* {/* <button onClick={() => getWeather("Toronto")}>Toronto</button> */
-}
-// <button onClick={() => getWeather("London")}>London</button> */}
-{
-  /* </div> */
-}
-{
-  /* <div className="today-time-section"> */
-}
-{
-  /* {weatherDailyData && ( */
-}
-// <WeatherHourly weatherDailyData={weatherDailyData} />
-// )}
-{
-  /* </div> */
-}
-{
-  /* <div className="weekdays-todays-container"> */
-}
-{
-  /* <div className="weekdays-section"> */
-}
-{
-  /* {weatherDailyData && ( */
-}
-// <WeatherDays weatherDailyData={weatherDailyData} />
-// )}
-{
-  /* </div> */
-}
-{
-  /* <div className="todays-details"> */
-}
-{
-  /* todays details */
-}
-{
-  /* {weatherDailyData && <WeatherToday weatherDailyData={weatherDailyData} */
-}
-{
-  /* />} */
-}
-{
-  /* </div> */
-}
-{
-  /* </div> */
-}
-{
-  /* <Icon></Icon>  */
-}

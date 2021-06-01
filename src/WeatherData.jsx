@@ -7,7 +7,7 @@ export default function WeatherData({ weatherData }) {
   function convertTime(data) {
     let dt = new Date(data * 1000);
     // console.log(new Date(unixTime * 1000), offset)
-    const t = dayjs(dt).format("hh:mm - dddd, D MMM 'YY ");
+    const t = dayjs(dt).format("hh:mm A - dddd, D MMM 'YY ");
     return t;
   }
 
@@ -32,10 +32,6 @@ export default function WeatherData({ weatherData }) {
         </div>
       </div>
 
-      {/* <div className="temp-high-low">
-        H:{Math.round(weatherData.main.temp_max)}° &nbsp; L:
-        {Math.round(weatherData.main.temp_min)}°
-      </div> */}
     </div>
   );
 }
