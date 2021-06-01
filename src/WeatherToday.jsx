@@ -40,7 +40,7 @@ export default function WeatherToday({ weatherDailyData }) {
         <span>Sunset</span> <span>{convertTime(todaySunset)}</span>{" "}
       </div>
       <div>
-        <span>Chance of Rain</span> <span>08:3{weatherDailyData.current.rain ? weatherDailyData.current.rain : "0%"}</span>
+        <span>Chance of Rain</span> <span> {weatherDailyData.current.rain ? weatherDailyData.current.rain : "0%"}</span>
       </div>
       <div>
         <span>Humidity</span>
