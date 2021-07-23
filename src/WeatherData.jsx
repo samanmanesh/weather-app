@@ -21,6 +21,7 @@ export default function WeatherData({ weatherData }) {
             <img
               src={`icons/${weatherData.weather[0].icon}.svg`}
               className="icon"
+              alt="icon"
             />
           </div>
         </div>

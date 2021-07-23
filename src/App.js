@@ -2,7 +2,7 @@ import "./App.scss";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import WeatherData from "./WeatherData";
-import WeatherHourly from "./WeatherHourly";
+// import WeatherHourly from "./WeatherHourly";
 import WeatherDays from "./WeatherDays";
 import WeatherToday from "./WeatherToday";
 
@@ -127,20 +127,20 @@ function App() {
       <footer>
         <div> <div>Connect with us </div> 
 
-        <a href="https://github.com/samanmanesh" target="_blank">
+        <a href="https://github.com/samanmanesh" target="_blank" rel="noreferrer">
           {" "}
           <img src="/social-icons/github.svg" alt="" />
         </a>
-        <a href="https://instagram.com/samansmanesh" target="_blank">
+        <a href="https://instagram.com/samansmanesh" target="_blank" rel="noreferrer">
           <img src="/social-icons/instagram.svg" alt="" />
         </a>
         <a
           href="https://www.linkedin.com/in/saman-manesh-96b257213/"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           <img src="/social-icons/linkedin.svg" alt="" />
         </a>
-        <a href="">
+        <a href="mailto:samanmanesh7@gmail.com" target="_blank" rel="noreferrer">
           <img src="/social-icons/mail.svg" alt="" />
         </a>
         </div>

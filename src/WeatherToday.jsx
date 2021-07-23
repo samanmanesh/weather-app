@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 
 export default function WeatherToday({ weatherDailyData }) {
   console.log(weatherDailyData);

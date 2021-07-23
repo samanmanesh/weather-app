@@ -21,6 +21,7 @@ export default function WeatherDays({ weatherDailyData }) {
               <img
                 src={`icons/${data.weather[0].icon}.svg`}
                 className="display-icon-days"
+                alt="icon"
               />
               <div>
                 <div className="display-temp-max">

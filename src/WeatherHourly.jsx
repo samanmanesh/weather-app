@@ -28,6 +28,7 @@ export default function WeatherHourly({ weatherDailyData }) {
             <img
               src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
               className="display-icon"
+              alt="icon"
             />
             <div className="display-temp">{Math.round(data.feels_like)}°</div>
           </div>
