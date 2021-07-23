@@ -99,7 +99,7 @@ function App() {
               onKeyPress={search}
             />
             <button onClick={() => getWeather(ref.current.value)}>
-              <img src="/icons/search.svg" alt="no" />
+              <img src="icons/search.svg" alt="search" />
             </button>
           </section>
           <section className="city-offer">
@@ -129,7 +129,7 @@ function App() {
 
         <a href="https://github.com/samanmanesh" target="_blank" rel="noreferrer">
           {" "}
-          <img src="icons/github.svg" alt="github" />
+          <img src="icons/gitHub.svg" alt="github" />
         </a>
         <a href="https://instagram.com/samansmanesh" target="_blank" rel="noreferrer">
           <img src="icons/instagram.svg" alt="instagram" />
