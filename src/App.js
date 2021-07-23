@@ -129,19 +129,19 @@ function App() {
 
         <a href="https://github.com/samanmanesh" target="_blank" rel="noreferrer">
           {" "}
-          <img src="/social-icons/github.svg" alt="" />
+          <img src="icons/github.svg" alt="github" />
         </a>
         <a href="https://instagram.com/samansmanesh" target="_blank" rel="noreferrer">
-          <img src="/social-icons/instagram.svg" alt="" />
+          <img src="icons/instagram.svg" alt="instagram" />
         </a>
         <a
           href="https://www.linkedin.com/in/saman-manesh-96b257213/"
           target="_blank" rel="noreferrer"
         >
-          <img src="/social-icons/linkedin.svg" alt="" />
+          <img src="icons/linkedin.svg" alt="linkedin" />
         </a>
         <a href="mailto:samanmanesh7@gmail.com" target="_blank" rel="noreferrer">
-          <img src="/social-icons/mail.svg" alt="" />
+          <img src="icons/mail.svg" alt="mail" />
         </a>
         </div>
         <div className="creator-name">Created by Saman Manesh </div>
