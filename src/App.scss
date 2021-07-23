@@ -10,22 +10,25 @@ $mobileBreakpoint: 768px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 400px;
 }
 
 .grid-container {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 25% 25% 25% 1.5fr;
-  grid-template-rows: 1fr 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
+  // grid-template-rows: 1fr 1rem;
+  grid-template-rows: auto auto;
   gap: 0px 0px;
   grid-template-areas:
+    "main main main main"
+    "sidebar sidebar sidebar sidebar";
+    // min-width: 100vw;
+  @media (min-width: $mobileBreakpoint) {
+    // min-width: 100%;
+    grid-template-areas:
     "main main main sidebar"
     "main main main sidebar";
-
-  @media (max-width: $mobileBreakpoint) {
-    min-width: 100vw;
-
-    grid-template-areas: "main main main main";
   }
 }
 
@@ -100,8 +103,8 @@ main {
         }
       }
 
-      @media (max-width: $mobileBreakpoint) {
-        flex-direction: column;
+      @media (min-width: $mobileBreakpoint) {
+        // flex-direction: column;
       }
     }
     @media (max-width: $mobileBreakpoint) {
@@ -125,9 +128,9 @@ aside {
   background: $material;
   min-width: 100px;
 
-  @media (max-width: $mobileBreakpoint) {
-    display: none;
-  }
+  // @media (max-width: $mobileBreakpoint) {
+  //   display: none;
+  // }
 
   display: flex;
   flex-direction: column;
@@ -251,7 +254,7 @@ footer {
 //todo Blur effect: backdrop-blur
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
